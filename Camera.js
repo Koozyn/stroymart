@@ -1,22 +1,30 @@
-const mongoose = require('mongoose');
+const express = require('express');
+const router = express.Router();
+const Camera = require('../models/Camera');
 
-const cameraSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    isActive: {
-        type: Boolean,
-        default: true // ← теперь камеры активны по умолчанию
-    },
-    streamUrl: {
-        type: String,
-        default: 'http://s98.ddns.net:10090/o2b3.mjpg?user=&fps=25' // ← стандартный URL
-    },
-    accessLevel: {
-        type: Number,
-        default: 1
+router.get('/', async (req, res) => {
+    try {
+        const cameras = await Camera.find();
+        res.json(cameras);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
     }
 });
 
-module.exports = mongoose.model('Camera', cameraSchema);
+router.post('/', async (req, res) => {
+    const camera = new Camera({
+        name: req.body.name,
+        isActive: req.body.isActive,
+        streamUrl: req.body.streamUrl,
+        accessLevel: req.body.accessLevel
+    });
+
+    try {
+        const newCamera = await camera.save();
+        res.status(201).json(newCamera);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
+module.exports = router;
