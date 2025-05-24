@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Панель управления камерами</h1>
+            <nav>
+                <button class="stats-btn">Статистика</button>
+                <button class="open-file-btn">Открыть файл</button>
+                <button class="user-btn">Пользователи</button>
+                <a href="/" class="logout-btn">Выйти</a>
+            </nav>
+        </header>
+
+        <main class="cameras-grid">
+            <div class="camera-card">
+                <h3>Камера 1</h3>
+                <div class="camera-feed">
+                    <img src="../assets/icons/cam_disabled.svg" class="camera-icon" alt="Camera disabled">
+                    <img src="http://s98.ddns.net:10090/o2b3.mjpg?user=&fps=25" class="camera-stream" alt="Camera 1 Stream">
+                    <div class="camera-status">Нет доступа</div>
+                </div>
+            </div>
+
+            <div class="camera-card inactive">
+                <h3>Камера 2</h3>
+                <div class="camera-feed">
+                    <img src="../assets/icons/cam_disabled.svg" alt="Camera 2">
+                    <div class="camera-status">Нет доступа</div>
+                </div>
+            </div>
+
+            <div class="camera-card inactive">
+                <h3>Камера 3</h3>
+                <div class="camera-feed">
+                    <img src="../assets/icons/cam_disabled.svg" alt="Camera 3">
+                    <div class="camera-status">Нет доступа</div>
+                </div>
+            </div>
+
+            <div class="camera-card inactive">
+                <h3>Камера 4</h3>
+                <div class="camera-feed">
+                    <img src="../assets/icons/cam_disabled.svg" alt="Camera 4">
+                    <div class="camera-status">Нет доступа</div>
+                </div>
+            </div>
+
+            <div class="camera-card inactive">
+                <h3>Камера 5</h3>
+                <div class="camera-feed">
+                    <img src="../assets/icons/cam_disabled.svg" alt="Camera 5">
+                    <div class="camera-status">Нет доступа</div>
+                </div>
+            </div>
+
+            <div class="camera-card inactive">
+                <h3>Камера 6</h3>
+                <div class="camera-feed">
+                    <img src="../assets/icons/cam_disabled.svg" alt="Camera 6">
+                    <div class="camera-status">Нет доступа</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно для просмотра камеры -->
+    <div class="modal" id="cameraModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-camera-feed">
+                <img src="" class="modal-stream" alt="Camera Stream">
+            </div>
+            <div class="modal-controls">
+                <button class="nav-btn prev-btn">&larr;</button>
+                <div class="camera-info">Камера <span id="currentCamera">1</span></div>
+                <button class="nav-btn next-btn">&rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно статистики -->
+    <div class="modal" id="statsModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Статистика Сессии</h2>
+            <div class="stats-info">
+                <p><strong>Логин:</strong> <span id="statsUsername">...</span></p>
+                <p><strong>Время на сайте:</strong> <span id="statsTimeOnSite">...</span></p>
+                <h3>Время с модальными окнами камер:</h3>
+                <ul id="statsCameraTimes">
+                    <!-- Заполняется динамически -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+<html lang="ru">
+<head>
+    </head>
+<body>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
+</html>
