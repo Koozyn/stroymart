@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+}
+
+.login-form h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.flex-row {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.lf--input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.lf--input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.lf--input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.lf--submit {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lf--submit:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.lf--submit:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: #ff6b6b;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+.lf--label {
+    position: absolute;
+    left: 12px;
+    top: -8px;
+    background: #1e3c72;
+    padding: 0 5px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+}
